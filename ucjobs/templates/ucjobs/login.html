@@ -1,0 +1,40 @@
+{% extends "ucjobs/base_login_register.html" %}
+
+{% block meta %}
+<meta name="description" content="U-C Jobs Log in">
+{% endblock %}
+
+{% block title %}
+<title>U-C Jobs Login</title>
+{% endblock %}
+
+
+{% block css %}
+<link href="/static/css/login.css" rel="stylesheet">
+{% endblock %}
+
+
+
+{% block content %}
+<form class="form-signin" role="form" method="post" action="{% url 'login' %}">
+  <h2 class="form-signin-heading">Log in</h2>
+  <input type="username" class="form-control" placeholder="Username" name="username" required autofocus>
+  <input type="password" class="form-control" placeholder="Password" name="password" required>
+  <a class="forget-link" href="{% url 'reset' %}"><u>Forget your password?</u></a>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+  <div class="register">
+    <center>Not a member?&nbsp;&nbsp;<a class="login-link" href="{% url 'job_seeker_register' %}"><u>Register</u></a></center>
+  </div>
+  <div class="non-loggedin">
+    <center><a href="{% url 'home_non_loggedin' %}"><u>Browse without Login?</u></a></center>
+  </div>
+  <input type="hidden" name="next" value="{{ next }}" />
+  {% csrf_token %}
+</form>
+{% endblock %}   
+
+{% block error %}
+{% if form.errors %}
+<p class="error-div-p">Incorrect user name and password.</p>
+{% endif %}
+{% endblock %}

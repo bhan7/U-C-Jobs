@@ -1,0 +1,25 @@
+{% extends "ucjobs/base_login_register.html" %}
+
+{% block meta %}
+<meta name="description" content="U-C Jobs Register Complete">
+{% endblock %}
+
+{% block title %}
+<title>U-C Jobs Register Complete</title>
+{% endblock %}
+
+
+{% block css %}
+<link href="/static/css/confirm.css" rel="stylesheet">
+{% endblock %}
+
+
+
+{% block content %}
+</br></br>
+<p class="confirm">
+  Thank you for confirming your email address.
+  Please <a class="comfirm_link" href="{% url 'login' %}">login</a> to access U-C Jobs.
+</p>
+{% endblock %}   
+

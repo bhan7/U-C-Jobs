@@ -1,0 +1,4 @@
+      <h2>Result</h2></br>
+      {% for company in result %}
+      <a class="post_info" href="{% url 'show_company_profile_job_seeker' company.id %}">{{company.company_name}}</a></br>
+      {% endfor %}

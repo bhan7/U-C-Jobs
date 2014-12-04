@@ -1,0 +1,33 @@
+{% extends "ucjobs/base_login_register.html" %}
+
+{% block meta %}
+<meta name="description" content="U-C Jobs Register Confirm">
+{% endblock %}
+
+{% block title %}
+<title>U-C Jobs Register Confirm</title>
+{% endblock %}
+
+
+{% block css %}
+<link href="/static/css/confirm.css" rel="stylesheet">
+{% endblock %}
+
+
+
+{% block content %}
+</br></br>
+{% if validlink %}
+<form class="form-signin" method="post">
+  <input id="id_new_password1" type="password" class="form-control" placeholder="New Password" name="new_password1" required autofocus>
+  {{ form.new_password1.errors }}
+  <input id="id_new_password2" type="password" class="form-control" placeholder="New Password Confirmation" name="new_password2" required>
+  {{ form.new_password2.errors }}
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+  {% csrf_token %}
+</form>
+{% else %}
+<p class="reset">This reset link is no longer valid!</p>
+{% endif %}
+{% endblock %}   
+

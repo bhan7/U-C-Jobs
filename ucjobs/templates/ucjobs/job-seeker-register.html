@@ -1,0 +1,56 @@
+{% extends "ucjobs/base_login_register.html" %}
+
+{% block meta %}
+<meta name="description" content="U-C Jobs Register for Job Seekers">
+{% endblock %}
+
+{% block title %}
+<title>U-C Jobs Register</title>
+{% endblock %}
+
+
+{% block css %}
+<link href="/static/css/register.css" rel="stylesheet">
+{% endblock %}
+
+
+
+{% block content %}
+<form class="form-signin" role="form" method="post" action="{% url 'job_seeker_register' %}">
+  <h2 class="form-signin-heading">Register</h2>
+  <ul class="nav nav-pills" role="tablist">
+    <li class="active"><a href="{% url 'job_seeker_register' %}">Job Seeker</a></li>
+    <li><a href="{% url 'company_register' %}">Company</a></li>
+  </ul></br>
+  <input type="username" class="form-control" placeholder="Username" name="username" required autofocus>
+  {{ form.username.errors }}
+  <input type="username" class="form-control" placeholder="E-mail" name="email" required>
+  {{ form.email.errors }}
+  <input type="username" class="form-control" placeholder="First Name" name="first_name" required>
+  {{ form.first_name.errors }}
+  <input type="username" class="form-control" placeholder="Last Name" name="last_name" required>
+  {{ form.last_name.errors }}
+  <input type="username" class="form-control" placeholder="Birthdate (mm/dd/yyyy)" name="birthdate" required>
+  {{ form.birthdate.errors }}
+  <input type="username" class="form-control" placeholder="Password" name="password1" required>
+  {{ form.password1.errors }}
+  <input type="username" class="form-control" placeholder="Confirm Password" name="password2" required></br>
+  {{ form.password2.errors }}
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+  {% csrf_token %}
+</form>
+<div class="register">
+  <center>Already on U-C Jobs?&nbsp;&nbsp;<a class="login-link" href="{% url 'login' %}"><u>Log in</u></a></center>
+</div></br>
+{% endblock %}   
+
+{% block error %}
+{% for error in form.non_field_errors %}
+<p class="error-div-p">{{ error }}</p>
+{% endfor %}
+{% endblock %}
+
+
+
+
+

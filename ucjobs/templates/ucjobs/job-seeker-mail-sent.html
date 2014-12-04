@@ -1,0 +1,38 @@
+{% extends "ucjobs/base_mail_job_seeker.html" %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-sm-2">
+    <ul class="nav nav-sidebar">
+      <li><a class="normal-font" href="{% url 'job_seeker_mail_inbox' %}">Inbox</a></li>
+      <li class="active active-job-seeker"><a class="active-font" href="{% url 'job_seeker_mail_sent' %}">Sent</a></li>
+      <li><a class="normal-font" href="{% url 'job_seeker_mail_compose' %}">Compose</a></li>
+    </ul>
+  </div>
+
+  <div class="col-sm-9">
+    <h3 class="page-header">Mail Box</h3>
+    <div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th width="15%">To</th>
+            <th width="25%">Date</th>
+            <th width="60%">Subject</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for mail in mail_sent %}
+          <tr>
+            <td>{{mail.receiver}}</td>
+            <td>{{mail.mail_time}}</td>
+            <td><a class="mail_detail" href="{% url 'job_seeker_mail_read' mail.id %}">{{mail.mail_subject}}</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

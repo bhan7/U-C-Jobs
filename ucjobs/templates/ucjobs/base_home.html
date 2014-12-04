@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="U-C Jobs Home">
+    <meta name="author" content="Team85">
+    
+
+    <title>U-C Jobs Home</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap-3.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/home.css" rel="stylesheet">
+
+    {% block js %}{% endblock %}
+
+
+  </head>
+
+  <body>
+
+    {% block navi_bar %}{% endblock %}
+
+    <div class="container">
+      <div class="jumbotron">
+        <div class="row">
+          {% for company_profile in company_profiles %}
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            {% block company_logo %}{% endblock %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="jumbotron">
+        <h2>Hiring Information</h2>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th width="15%">Location</th>
+              <th width="15%">Time</th>
+              <th width="70%">Post Title</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for company_post in company_posts %}
+            <tr>
+              <td>{{company_post.location}}</td>
+              <td>{{company_post.post_time|date:"M-d-Y"}}</td>
+              {% block post_info %}{% endblock %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </body>
+</html>

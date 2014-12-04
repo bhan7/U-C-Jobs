@@ -1,0 +1,67 @@
+{% extends "ucjobs/base_general_company.html" %}
+
+{% block meta %}
+<meta name="description" content="U-C Jobs Company Profile">
+{% endblock %}
+
+{% block title %}
+<title>Profile</title>
+{% endblock %}
+
+{% block css %}
+<link href="/static/css/profile.css" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+
+  <div class="profile">
+    <div class="jumbotron">
+      <div>
+        {% if company_profile.photo %}
+        <center><img src="{% url 'get_company_photo' company_profile.id %}" alt="{{company_profile.company_name}}" height="150" width="150"></center>
+        {% else %}
+        <center><img src="/static/img/default-company.png" alt="default image" height="150" width="150"></center>
+        {% endif %}
+      </div>
+      <center><div class="company-name">{{ company_profile.company_name }}</div></center>
+      <div class="company-username">Username: {{ company_profile.user.username }} </div></br>
+      <div class="company-website">Website: {{ company_profile.company_website }} </div></br>
+      <div class="company-description">Company Description: {{ company_profile.description }} </div></br>
+      <div class="company-info">Basic Information: 
+        <ul style="list-style-type:square">
+          <li>Location: {{ company_profile.location }}</li>
+          <li>Company Type: {{ company_profile.company_type }}</li>
+          <li>Employee Number: {{ company_profile.employee_num }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="post">
+    <div class="jumbotron">
+      <h2>Hiring Information</h2> 
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th width="15%">Location</th>
+            <th width="15%">Time</th>
+            <th width="70%">Post Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for company_post in company_posts %}
+          <tr>
+            <td>{{company_post.location}}</td>
+            <td>{{company_post.post_time|date:"M-d-Y"}}</td>
+            <td><a class="post_info" href="{% url 'show_company_post_company' company_post.id %}">{{company_post.post_subject}}</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

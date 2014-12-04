@@ -1,0 +1,53 @@
+{% extends "ucjobs/base_general_job_seeker.html" %}
+
+{% block meta %}
+<meta name="description" content="U-C Jobs Company Post">
+{% endblock %}
+
+{% block title %}
+<title>Post</title>
+{% endblock %}
+
+{% block css %}
+<link href="/static/css/post.css" rel="stylesheet">
+{% endblock %}
+
+{% block js %}
+<script src="/static/js/interest-company-post.min.js" type="text/javascript"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="jumbotron">
+
+    <div class="row">
+      <div class="col-sm-4">
+        Post Time: {{company_post.post_time}}
+      </div>
+      <div class="col-sm-4">
+        Job Location: {{company_post.location}}
+      </div>
+      <div class="col-sm-4">
+        Job Type: {{company_post.position_type}}
+      </div>
+    </div>
+
+    <div class="post-content">
+      <center><h3>Content<h3></center>
+      <textarea disabled>{{company_post.post_content}}</textarea>
+    </div>
+
+    <div class="interest">
+      <span class="glyphicon glyphicon-heart interest-post" post-id="{{company_post.id}}"></span>
+      <div class="interest_list">
+        {% for user in company_post.follow_list.all %}
+        <a class="post_info" href="{% url 'show_job_seeker_profile_job_seeker' user.id %}">{{user.first_name}} {{user.last_name}}</a>;
+        {% endfor %}
+      </div>
+    </div>
+
+    <a class="btn btn-default view-post" href="{% url 'home_job_seeker' %}" role="button">Back</a>
+
+  </div>
+</div>
+{% endblock %}

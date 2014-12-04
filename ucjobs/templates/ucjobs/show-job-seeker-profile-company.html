@@ -1,0 +1,64 @@
+{% extends "ucjobs/base_general_company.html" %}
+
+{% block meta %}
+<meta name="description" content="U-C Jobs Job Seeker Profile">
+{% endblock %}
+
+{% block title %}
+<title>Profile</title>
+{% endblock %}
+
+{% block css %}
+<link href="/static/css/profile.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <div class="profile">
+    <div class="jumbotron">
+      <div>
+        {% if job_seeker_profile.photo %}
+        <center><img src="{% url 'get_job_seeker_photo' job_seeker_profile.id %}" alt="{{job_seeker_profile.first_name}} {{job_seeker_profile.last_name}}" height="150" width="150"></center>
+        {% else %}
+        <center><img src="/static/img/default-job-seeker.png" alt="default image" height="150" width="150"></center>
+        {% endif %}
+      </div>
+      <center><div class="company-name">{{ job_seeker_profile.user.first_name }} {{ job_seeker_profile.user.last_name }}</div></center>
+      <div class="job-seeker-description"><h4>Description</h4> {{ job_seeker_profile.description }} </div></br>
+      <div class="job-seeker-info"><h4>Basic Information</h4> 
+        <ul style="list-style-type:square">
+          <li>Gender: {{ job_seeker_profile.gender }}</li>
+          <li>E-mail: {{ job_seeker_profile.user.email }}</li>
+          <li>Phone: {{ job_seeker_profile.phone }}</li>  
+          <li>ID: {{ job_seeker_profile.id_number }}</li>
+          <li>Birthdate: {{ job_seeker_profile.birthdate }}</li>
+          <li>Birthplace: {{ job_seeker_profile.birthplace }}</li>
+          <li>Current Place: {{ job_seeker_profile.current_place }}</li>
+          <li>Politics Status: {{ job_seeker_profile.politics_status }}</li>
+          <li>Graduation Date: {{ job_seeker_profile.graduation_date }}</li>
+          {% if job_seeker_profile.resume.url != null%}
+          <li>Resume: <a class="post_info" href="{{job_seeker_profile.resume.url}}" role="button" target="_blank">Download</a></li></br>
+          {% endif %}
+        </ul>
+      </div>
+      <div class="job-seeker-education"><h4>Education</h4>
+        {% for education in educations %}
+        <label>{{education.school}}</label></br>
+        {{education.degree}} , {{education.major}}</br>
+        {{education.begin}} - {{education.end}}</br></br>
+        {% endfor %}
+      </div>
+      <div class="job-seeker-work"><h4>Work Experience</h4>
+        {% for work in work_exps %}
+        <label>{{work.position}}</label></br>
+        {{work.company}}</br>
+        {{work.begin}} - {{work.end}}</br>
+        {{work.description}}</br>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

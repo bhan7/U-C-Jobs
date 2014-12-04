@@ -1,0 +1,105 @@
+{% extends "ucjobs/base_general_company.html" %}
+
+{% block meta %}
+<meta name="description" content="U-C Jobs Company Profile">
+{% endblock %}
+
+{% block title %}
+<title>Profile</title>
+{% endblock %}
+
+{% block css %}
+<link href="/static/css/profile.css" rel="stylesheet">
+{% endblock %}
+
+{% block js %}
+<script src="/static/js/add-message-self.min.js" type="text/javascript"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <div class="profile">
+    <div class="jumbotron">
+      <div>
+        {% if company_profile.photo %}
+        <center><img src="{% url 'get_company_photo' company_profile.id %}" alt="{{company_profile.company_name}}" height="150" width="150"></center>
+        {% else %}
+        <center><img src="/static/img/default-company.png" alt="default image" height="150" width="150"></center>
+        {% endif %}
+      </div>
+
+      <center><div class="company-name">{{ company_profile.company_name }}</div></center>
+
+      <a class="btn btn-default edit-profile" href="{% url 'edit_company_profile' %}" role="button">Edit Profile</a>
+      <div class="company-website">Website: {{ company_profile.company_website }} </div></br>
+      <div class="company-description">Description: {{ company_profile.description }} </div></br>
+      <div class="company-info">Basic Information: 
+        <ul style="list-style-type:square">
+          <li>Location: {{ company_profile.location }}</li>
+          <li>Company Type: {{ company_profile.company_type }}</li>
+          <li>Employee Number: {{ company_profile.employee_num }}</li>
+        </ul>
+      </div>
+      <a class="btn btn-default edit-profile" href="{% url 'reset_password_company' %}" role="button">Change Your Password?</a>
+    </div>
+  </div>
+
+  <div class="post">
+    <div class="jumbotron">
+      <h2>Hiring Information</h2> 
+      <a class="btn btn-default new-post" href="{% url 'add_company_post' %}" role="button">New Post</a>
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th width="15%">Location</th>
+            <th width="15%">Time</th>
+            <th width="55%">Post Title</th>
+            <th width="15%"></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for company_post in company_posts %}
+          <tr>
+            <td>{{company_post.location}}</td>
+            <td>{{company_post.post_time|date:"M-d-Y"}}</td>
+            <td><a class="post_info" href="{% url 'show_company_post_self' company_post.id %}">{{company_post.post_subject}}</a></td>
+            <td>
+              <a class="btn btn-default post_delete" href="{% url 'edit_company_post' company_post.id %}" role="button">Edit</a>
+              <a class="btn btn-default post_delete" href="{% url 'delete_company_post' company_post.id %}" role="button">Delete</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Ajax to update -->
+  <div class="message">
+    <div class="jumbotron">
+      <h2>Message Board</h2>
+      <div class="messages">
+        {% for message in messages %}
+        <div class="message-detail">
+          {% if not message.user.last_name %}
+          <a class="post_info" href="{% url 'show_company_profile_self' %}">{{message.user.first_name}}</a>: {{message.content}} <a class="message_reply" onclick="replyMessage(this)">Reply</a>
+          {% else %}
+          <a class="post_info" href="{% url 'show_job_seeker_profile_company' message.user.id %}">{{message.user.first_name}} {{message.user.last_name}}</a>: {{message.content}} <a class="message_reply" onclick="replyMessage(this)">Reply</a>
+          {% endif %}
+        </div>
+        {% endfor %} 
+      </div> 
+      <form class="form-signin message-form">
+        <div class="message-field">
+          <input id="message_input" type="text" class="form-control" name="content">
+        </div>
+        {% csrf_token %}
+      </form>
+      <button onclick="add_message_self()" company-profile-id="{{company_profile.id}}" class="btn btn-default edit-post post-message">Post</button>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,64 @@
+/* reference for full background image:
+ http://buxiangshuo.diandian.com/?p=239 */
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: url(/static/img/uc-bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/* reference for the semi-transparent container block:
+ http://www.cnf2e.com/css-div-html/css-background-color-transparent.html */
+.container {
+  margin-top: 100px;
+  width:50%;
+  background:rgba(223,216,216,0.8);
+  background: transparent\9;
+  zoom:1\8; /* required for the filters */
+  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)"; /* IE8 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000); /* IE5.5-7 */
+}
+
+.confirm {
+  text-align: justify;
+  font-size: 18px;
+}
+
+.reset {
+  text-align: center;
+  font-size: 18px;
+}
+
+.confirm_link {
+  color: #4169E1;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin {
+  margin-bottom: 10px;
+}
+.form-signin .register {
+  margin-top: 10px;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.btn{
+  margin-top: 5px;
+}

@@ -1,0 +1,26 @@
+{% extends "ucjobs/base_login_register.html" %}
+
+{% block meta %}
+<meta name="description" content="U-C Jobs Reset Password">
+{% endblock %}
+
+{% block title %}
+<title>U-C Jobs Reset Password</title>
+{% endblock %}
+
+
+{% block css %}
+<link href="/static/css/confirm.css" rel="stylesheet">
+{% endblock %}
+
+
+
+{% block content %}
+</br></br>
+<p class="confirm">
+  New password has been created.
+  Please <a class="confirm_link" href="{% url 'login' %}">login</a> to access your U-C Jobs account.
+</p>
+{% endblock %}   
+
+

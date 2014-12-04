@@ -1,0 +1,28 @@
+{% extends "ucjobs/base_login_register.html" %}
+
+{% block meta %}
+<meta name="description" content="U-C Jobs Reset Password">
+{% endblock %}
+
+{% block title %}
+<title>U-C Jobs Reset Password</title>
+{% endblock %}
+
+
+{% block css %}
+<link href="/static/css/confirm.css" rel="stylesheet">
+{% endblock %}
+
+
+
+{% block content %}
+</br></br>
+<form class="form-signin" method="post">
+  <input id="id_email" type="email" class="form-control" placeholder="Registered Email" name="email" required autofocus>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button></br>
+  {% csrf_token %}
+</form>
+{% endblock %}   
+
+
+

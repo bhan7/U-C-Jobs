@@ -1,0 +1,56 @@
+{% extends "ucjobs/base_login_register.html" %}
+
+{% block meta %}
+<meta name="description" content="U-C Jobs Register for Job Seekers">
+{% endblock %}
+
+{% block title %}
+<title>U-C Jobs Register</title>
+{% endblock %}
+
+
+{% block css %}
+<link href="/static/css/register.css" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+<form enctype="multipart/form-data" class="form-signin" role="form" method="post" action="{% url 'company_register' %}">
+  <h2 class="form-signin-heading">Register</h2>
+  <ul class="nav nav-pills" role="tablist">
+    <li><a href="{% url 'job_seeker_register' %}">Job Seeker</a></li>
+    <li class="active"><a href="{% url 'company_register' %}">Company</a></li>
+  </ul></br>
+  <input type="username" class="form-control" placeholder="Username" name="username" required autofocus>
+  {{ form.username.errors }}
+  <input type="username" class="form-control" placeholder="E-mail" name="email" required>
+  {{ form.email.errors }}
+  <input type="username" class="form-control" placeholder="Company Name" name="company_name" required>
+  {{ form.company_name.errors }}
+  <input type="username" class="form-control" placeholder="Password" name="password1" required>
+  {{ form.password1.errors }}
+  <input type="username" class="form-control" placeholder="Confirm Password" name="password2" required>
+  {{ form.password2.errors }}
+  <input type="file" class="form-control" name="logo" required>
+  {{ form.logo.errors }}
+  <center><small>Notes: Select a Logo Gif for Your Company</small></center></br>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+  {% csrf_token %}
+</form>
+
+<div class="register">
+  <center>Already on U-C Jobs?&nbsp;&nbsp;<a class="login-link" href="{% url 'login' %}"><u>Log in</u></a></center>
+</div></br>
+{% endblock %}   
+
+{% block error %}
+{% for error in form.non_field_errors %}
+<p class="error-div-p">{{ error }}</p>
+{% endfor %}
+{% endblock %}
+
+
+
+
+
+

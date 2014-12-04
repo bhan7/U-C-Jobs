@@ -1,0 +1,84 @@
+.navbar {
+  background: #483D8B;
+}
+
+.non-loggedin {
+  background: #A9A9A9;
+}
+
+.job-seeker {
+  background: #1E90FF;
+}
+
+a[class="nav-item"] {
+  color:white;
+}
+
+div.row { 
+  border: 1px solid;
+  border-left: 0px;
+  border-bottom: 0px;
+}
+
+.container div.row:last-child {
+  border-bottom: 1px solid;
+}
+
+div.col-sm-3 {
+	border-left: 1px solid;
+}
+
+th, td {
+	text-align:center;
+}
+
+.company-name {
+  font-size:20px;
+}
+.company-website, .company-description, .company-info {
+  font-size: 15px;
+}
+.post_info {
+  color: #4169E1;
+}
+.edit-profile, .new-post{
+  float: right;
+}
+.post_delete {
+  color:black;
+}
+.message-detail {
+  border-bottom-style: ridge;
+  font-size: 15px;
+}
+.message-form {
+  margin-top: 10px;
+}
+.message-field {
+  width: 50%;
+}
+.edit-post {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.new-education {
+  width:100%;
+}
+.form-sign {
+  display: none;
+}
+.edu_edit {
+  float: right;
+}
+.form-control {
+  margin-bottom: 5px;
+}
+.message_reply {
+  float:right;
+  color: #4169E1;
+}
+.unread_number {
+  font-weight: bold;
+  vertical-align: 3px;
+  padding-left: 2px;
+}

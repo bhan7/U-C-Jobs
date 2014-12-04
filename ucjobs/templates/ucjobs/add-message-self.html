@@ -1,0 +1,11 @@
+        <div class="messages">
+          {% for message in messages %}
+          <div class="message-detail">
+            {% if not message.user.last_name %}
+            <a class="post_info" href="{% url 'show_company_profile_job_seeker' message.company_profile.id %}">{{message.user.first_name}}</a>: {{message.content}} <a class="message_reply" onclick="replyMessage(this)">Reply</a>
+            {% else %}
+            <a class="post_info" href="{% url 'show_job_seeker_profile_job_seeker' message.user.id %}">{{message.user.first_name}} {{message.user.last_name}}</span></a>: {{message.content}} <a class="message_reply" onclick="replyMessage(this)">Reply</a>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>

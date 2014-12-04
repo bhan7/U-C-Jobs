@@ -1,0 +1,26 @@
+{% extends "ucjobs/base_home.html" %}
+
+{% block navi_bar %}
+<nav class="navbar non-loggedin">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{% url 'home_non_loggedin' %}"><kbd>U-C Jobs</kbd></a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a class="nav-item" href="{% url 'job_seeker_register' %}"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+        <li><a class="nav-item" href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{% endblock %}
+
+{% block company_logo %}
+<a href="{% url 'show_company_profile_non_loggedin' company_profile.id %}"><img src="{% url 'get_company_logo' company_profile.id %}" alt="{{company_profile.company_name}}" width="240" height="50"></a>
+{% endblock %}
+
+{% block post_info %}
+<td><a class="post_info" href="{% url 'show_company_post_non_loggedin' company_post.id %}">{{company_post.post_subject}}</a></td>
+{% endblock %}
+

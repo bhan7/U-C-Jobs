@@ -1,0 +1,59 @@
+.navbar {
+  background: #483D8B;
+}
+
+.non-loggedin {
+  background: #A9A9A9;
+}
+
+.job-seeker {
+  background: #1E90FF;
+}
+
+a[class="nav-item"] {
+  color:white;
+}
+
+
+.col-sm-3 { 
+  margin-bottom: 5px;
+}
+
+th, td {
+	text-align:left;
+}
+
+.nav-sidebar {
+  margin-top: 40px;
+}
+
+li.active-job-seeker {
+  background-color: #1E90FF;
+}
+
+li.active-company {
+  background-color: #483D8B;
+}
+
+a[class="active-font"] {
+  color:white;
+}
+
+a[class="normal-font"] {
+  color:black;
+}
+
+textarea {
+  width: 100%;
+  height: 15em;
+}
+
+.form-control {
+  margin-bottom: 5px;
+}
+
+.unread_number {
+  font-weight: bold;
+  vertical-align: 3px;
+  padding-left: 2px;
+}

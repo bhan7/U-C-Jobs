@@ -1,0 +1,26 @@
+{% extends "ucjobs/base_login_register.html" %}
+
+{% block meta %}
+<meta name="description" content="U-C Jobs Register Confirm">
+{% endblock %}
+
+{% block title %}
+<title>U-C Jobs Register Confirm</title>
+{% endblock %}
+
+
+{% block css %}
+<link href="/static/css/confirm.css" rel="stylesheet">
+{% endblock %}
+
+
+
+{% block content %}
+</br></br>
+<p class="confirm">
+  A confirmation email has been sent to {{email}}.  Please click the link
+  in that email to confirm your email address and complete your registation for
+  your U-C Jobs account.
+</p>
+{% endblock %}   
+

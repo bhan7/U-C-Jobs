@@ -1,0 +1,26 @@
+{% extends "ucjobs/base_mail_job_seeker.html" %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-sm-2">
+    <ul class="nav nav-sidebar">
+      <li><a class="normal-font" href="{% url 'job_seeker_mail_inbox' %}">Inbox</a></li>
+      <li><a class="normal-font" href="{% url 'job_seeker_mail_sent' %}">Sent</a></li>
+      <li><a class="normal-font" href="{% url 'job_seeker_mail_compose' %}">Compose</a></li>
+    </ul>
+  </div>
+
+  <div class="col-sm-9">
+    <h3 class="page-header">Mail Box</h3>
+    <div>
+
+      From: {{mail.sender}}</br>
+      Subject: {{mail.mail_subject}}</br></br>
+      <textarea disabled>{{mail.mail_content}}</textarea>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

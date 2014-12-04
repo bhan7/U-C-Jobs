@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="U-C Jobs Company Post">
+    <meta name="author" content="Team85">
+    
+
+    <title>Post</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap-3.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/post.css" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+
+  <nav class="navbar non-loggedin">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{% url 'home_non_loggedin' %}"><kbd>U-C Jobs</kbd></a>
+      </div>
+      <div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="nav-item" href="{% url 'job_seeker_register' %}"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+          <li><a class="nav-item" href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="jumbotron">
+
+      <div class="row">
+        <div class="col-sm-4">
+          Post Time: {{company_post.post_time}}
+        </div>
+        <div class="col-sm-4">
+          Job Location: {{company_post.location}}
+        </div>
+        <div class="col-sm-4">
+          Job Type: {{company_post.position_type}}
+        </div>
+      </div>
+
+      <div class="post-content">
+        <center><h3>Content<h3></center>
+        <textarea disabled>{{company_post.post_content}}</textarea>
+      </div>
+      <a class="btn btn-default view-post" href="{% url 'home_non_loggedin' %}" role="button">Back</a>  
+    </div>
+  </div>
+
+  </body>
+</html>

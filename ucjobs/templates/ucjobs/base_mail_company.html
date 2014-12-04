@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="U-C Jobs Company Mail">
+  <meta name="author" content="Team85">
+
+
+  <title>U-C Jobs Mail</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/static/bootstrap-3.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/static/css/mail.css" rel="stylesheet">
+
+  <script src="/static/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+  {% block js %}{% endblock %}
+  <script src="/static/js/reload-mail-unread-number.min.js" type="text/javascript"></script>
+
+</head>
+
+
+<body>
+
+  <nav class="navbar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{% url 'home_company' %}"><kbd>U-C Jobs Enterprise</kbd></a>
+      </div>
+
+      <div>
+          <ul class="nav navbar-nav">
+            <li><a class="nav-item" href="{% url 'show_company_profile_self' %}">{{ user.username }}'s Profile</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="nav-item" href="{% url 'company_mail_inbox' %}"><span class="glyphicon glyphicon-envelope"><span class="unread_number">[{{ mail_unread_number }}]</span></span></a></li>
+            <li><a class="nav-item" href="{% url 'search_job_seeker' %}"><span class="glyphicon glyphicon-search"></span> Search</a></li>
+            <li><a class="nav-item" href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+          </ul>
+      </div>
+    </div>
+  </nav>
+
+  {% block content %}{% endblock %}
+
+
+</body>
+</html>

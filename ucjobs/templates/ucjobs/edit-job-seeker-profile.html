@@ -1,0 +1,128 @@
+{% extends "ucjobs/base_general_job_seeker.html" %}
+
+{% block meta %}
+<meta name="description" content="U-C Jobs Job Seeker Edit Profile">
+{% endblock %}
+
+{% block title %}
+<title>Edit Profile</title>
+{% endblock %}
+
+{% block css %}
+<link href="/static/css/post.css" rel="stylesheet">
+{% endblock %}
+
+{% block js %}
+<script src="/static/js/edit-job-seeker-profile.min.js" type="text/javascript"></script>
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+  <div class="jumbotron">
+
+    <a class="back_link" href="{% url 'show_job_seeker_profile_self' %}"><span class="glyphicon glyphicon-circle-arrow-left"><span class="back_word">Back</span></a></br>
+
+    <form enctype="multipart/form-data" class="form-signin" action="{% url 'edit_job_seeker_profile' %}" method="post">
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Profile Photo</label>
+        <div class="col-sm-10">
+          <input type="file" class="form-control" name="photo">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Description</label>
+        <div class="col-sm-10">
+          <textarea class="form-control" name="description" rows="5">{{job_seeker_profile.description}}</textarea>
+          {{ form.description.errors }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Gender</label>
+        <div class="col-sm-10">
+          <select id="gender" class="form-control" name="gender">
+            <option value=""></option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+          {{ form.gender.errors }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Phone</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="phone" value="{{job_seeker_profile.phone}}" >
+          {{ form.phone.errors }}
+        </div>
+      </div>
+      
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">ID</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="id_number" value="{{job_seeker_profile.id_number}}">
+          {{ form.id_number.errors }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Birthplace</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="birthplace" value="{{job_seeker_profile.birthplace}}">
+          {{ form.birthplace.errors }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Current Place</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="current_place" value="{{job_seeker_profile.current_place}}">
+          {{ form.current_place.errors }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Politics Status</label>
+        <div class="col-sm-10">
+          <select id="politics_status" class="form-control" name="politics_status">
+            <option value=""></option>
+            <option value="Party Member">Party Member</option>
+            <option value="League Member">League Member</option>
+            <option value="the Masses">the Masses</option>
+          </select>
+          {{ form.politics_status.errors }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Graduation Date</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="graduation_date" placeholder="mm/dd/yyyy" value="{{job_seeker_profile.graduation_date|date:"m/d/Y"}}">
+          {{ form.graduation_date.errors }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Upload Resume</label>
+        <div class="col-sm-10">
+          <input type="file" class="form-control" name="resume"></br>
+        </div>
+      </div>
+
+      <center><button type="submit" class="btn btn-default edit-post">Save</button></center>
+      {% csrf_token %}
+    </form>
+
+    
+  </div>
+</div>
+
+<script type="text/javascript">
+var formValue1 = "{{form.gender.value}}";
+var formValue2 = "{{form.politics_status.value}}";
+</script>
+{% endblock %}
