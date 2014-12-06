@@ -32,9 +32,9 @@
   {{ form.last_name.errors }}
   <input type="username" class="form-control" placeholder="Birthdate (mm/dd/yyyy)" name="birthdate" required>
   {{ form.birthdate.errors }}
-  <input type="username" class="form-control" placeholder="Password" name="password1" required>
+  <input type="password" class="form-control" placeholder="Password" name="password1" required>
   {{ form.password1.errors }}
-  <input type="username" class="form-control" placeholder="Confirm Password" name="password2" required></br>
+  <input type="password" class="form-control" placeholder="Confirm Password" name="password2" required></br>
   {{ form.password2.errors }}
   <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
   {% csrf_token %}
