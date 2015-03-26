@@ -7,7 +7,7 @@ Company user can edit its company's profile and post the hiring information. Als
 Job seeker user can edit his/her profile and upload his/her resume. Also he/she can show interest to some recruitment posts, leave message on company's page, and send mails directly to the company user.
 Besides, when you are not a U-C Jobs member, you can view companies' profiles and their posts as a visitor.
 
-To skim U-C Jobs website, please go to http://54.148.4.190/.
+To skim U-C Jobs website, please go to .
 
 References:
 
