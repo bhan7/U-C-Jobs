@@ -1,13 +1,13 @@
+body {
+  background: #F5F5F5;
+}
+
 .navbar {
-  background: #483D8B;
+  background: #29567A;
 }
 
-.non-loggedin {
-  background: #A9A9A9;
-}
-
-.job-seeker {
-  background: #1E90FF;
+.navbar-nav li a:hover {
+  background-color: #6C94B3;
 }
 
 a[class="nav-item"] {
@@ -81,4 +81,9 @@ th, td {
   font-weight: bold;
   vertical-align: 3px;
   padding-left: 2px;
+}
+.logo {
+  height:40px;
+  width:120px;
+  margin-top:-10px;
 }

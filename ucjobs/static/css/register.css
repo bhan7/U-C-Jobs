@@ -53,3 +53,25 @@ body {
 a{
   color: black;
 }
+.logo {
+  height:60px;
+  width:180px;
+  margin-top: 20px;
+}
+.nav-pills li.active a{
+  background-color: #29567A;
+}
+.nav-pills li.active a:hover {
+  background-color: #6C94B3;
+}
+.nav-pills li a:hover {
+  background-color: #6C94B3;
+  color:white;
+}
+.btn{
+  background: #29567A;
+  border-color: #29567A;
+}
+.btn:hover {
+  background-color: #6C94B3;
+}

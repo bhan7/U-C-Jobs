@@ -3,7 +3,7 @@ body {
 }
 
 .navbar {
-  background: #483D8B;
+  background: #29567A;
 }
 
 .logo {
@@ -29,15 +29,6 @@ body {
   min-height:100%;
   overflow:hidden;
 }
-
-.non-loggedin {
-  background: #29567A;
-}
-
-.job-seeker {
-  background: #1E90FF;
-}
-
 
 .backc {
   background: #EDF5F7;

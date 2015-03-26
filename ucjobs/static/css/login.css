@@ -59,7 +59,14 @@ a {
 
 .btn{
   margin-top: 5px;
+  background: #29567A;
+  border-color: #29567A;
 }
+
+.btn:hover {
+  background-color: #6C94B3;
+}
+
 .error-div {
   text-align: center;
   padding-top: 10px;
@@ -73,3 +80,8 @@ a {
   background: white;
 }
 
+.logo {
+  height:60px;
+  width:180px;
+  margin-top: 20px;
+}
