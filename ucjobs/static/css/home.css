@@ -1,3 +1,7 @@
+body {
+  background: #F5F5F5;
+}
+
 .navbar {
   background: #483D8B;
 }
@@ -6,6 +10,10 @@
   height:40px;
   width:120px;
   margin-top:-10px;
+}
+
+.navbar-nav li a:hover {
+  background-color: #6C94B3;
 }
 
 .welcome {
@@ -33,6 +41,15 @@
 
 .backc {
   background: #EDF5F7;
+  border-style: outset;
+  border-width: 2px;
+  border-color: #D0EBF2;
+  box-shadow: -1px -1px 1px 1px #C0D6DC;
+}
+
+h2 {
+  margin-top: -20px;
+  padding-bottom: 10px;
 }
 
 a[class="nav-item"] {
@@ -44,6 +61,11 @@ a[class="nav-item"] {
   margin-bottom: 5px;
 }
 
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #C0D6DC;
+  color:white;
+}
+
 th, td {
 	text-align:center;
 }
@@ -51,6 +73,11 @@ th, td {
 .post_info {
   color: #4169E1;
 }
+
+.table-hover td a:hover {
+  color:white;
+}
+
 
 .unread_number {
   font-weight: bold;
