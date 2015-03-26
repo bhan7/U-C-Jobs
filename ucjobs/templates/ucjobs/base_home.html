@@ -26,8 +26,12 @@
 
     {% block navi_bar %}{% endblock %}
 
+    <div>
+      {% block welcome %}{% endblock %}
+    </div>
+
     <div class="container">
-      <div class="jumbotron">
+      <div class="jumbotron backc">
         <div class="row">
           {% for company_profile in company_profiles %}
           <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
@@ -37,7 +41,7 @@
         </div>
       </div>
 
-      <div class="jumbotron">
+      <div class="jumbotron backc">
         <h2>Hiring Information</h2>
         <table class="table table-hover">
           <thead>

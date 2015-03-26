@@ -4,7 +4,7 @@
 <nav class="navbar non-loggedin">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="{% url 'home_non_loggedin' %}"><kbd>U-C Jobs</kbd></a>
+      <a class="navbar-brand" href="{% url 'home_non_loggedin' %}"><img class="logo" src="/static/img/logo.png"></a>
     </div>
     <div>
       <ul class="nav navbar-nav navbar-right">
@@ -14,6 +14,10 @@
     </div>
   </div>
 </nav>
+{% endblock %}
+
+{% block welcome %} 
+<img class="welcome" src="/static/img/welcome.png">
 {% endblock %}
 
 {% block company_logo %}

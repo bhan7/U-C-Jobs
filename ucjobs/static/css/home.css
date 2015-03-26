@@ -2,12 +2,37 @@
   background: #483D8B;
 }
 
+.logo {
+  height:40px;
+  width:120px;
+  margin-top:-10px;
+}
+
+.welcome {
+  margin-top: -20px;
+  margin-bottom: 20px;
+  background-repeat:no-repeat;
+  /* custom background-position */
+  background-position:50% 50%;
+  /* ie8- graceful degradation */
+  background-position:50% 50%\9 !important;
+  height: 100%;
+  width:100%;
+  min-height:100%;
+  overflow:hidden;
+}
+
 .non-loggedin {
-  background: #A9A9A9;
+  background: #29567A;
 }
 
 .job-seeker {
   background: #1E90FF;
+}
+
+
+.backc {
+  background: #EDF5F7;
 }
 
 a[class="nav-item"] {
