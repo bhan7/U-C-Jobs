@@ -42,6 +42,21 @@ textarea {
   color: #DC143C; 
 }
 
+.interest-post {
+  cursor:pointer;
+}
+
+.glyphicon-hand-left {
+  padding-left: 10px;
+  font-size: 18px;
+}
+
+.click-like {
+  font-family:Book Antiqua;
+  font-size: 15px;
+  padding-left: 3px;
+}
+
 .post_info {
   color: #4169E1;
 }

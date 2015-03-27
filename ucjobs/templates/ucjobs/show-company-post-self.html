@@ -10,6 +10,7 @@
 
 {% block css %}
 <link href="/static/css/post.css" rel="stylesheet">
+<link href="/static/css/animate.min.css" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
@@ -35,7 +36,7 @@
 
     <div class="interest">
       <div class="interest_list">
-        <span class="glyphicon glyphicon-heart"></span></br>
+        <span class="glyphicon glyphicon-heart animated infinite pulse"></span></br>
         {% for user in company_post.follow_list.all %}
         <a class="post_info" href="{% url 'show_job_seeker_profile_company' user.id %}">{{user.first_name}} {{user.last_name}}</a>;
         {% endfor %}
