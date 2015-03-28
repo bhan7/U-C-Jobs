@@ -14,6 +14,20 @@ body {
 
 .navbar-nav li a:hover {
   background-color: #6C94B3;
+  color: white;
+}
+
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+  background-color: #6C94B3;
+  color: white;
+}
+
+.dropdown-menu {
+  background-color: #29567A;
+}
+
+.dropdown-menu>li>a {
+  color: white; 
 }
 
 .welcome {
@@ -43,7 +57,7 @@ h2 {
   padding-bottom: 10px;
 }
 
-a[class="nav-item"] {
+.dropdown-toggle, .nav-item {
   color:white;
 }
 
@@ -69,9 +83,21 @@ th, td {
   color:white;
 }
 
-
 .unread_number {
+  background: red;
+  border-radius: 0.6em;
+  -moz-border-radius: 0.6em;
+  -webkit-border-radius: 0.6em;
+  color: #ffffff;
+  display: inline-block;
   font-weight: bold;
-  vertical-align: 3px;
-  padding-left: 2px;
+  line-height: 1.2em;
+  text-align: center;
+  width: 1.2em; 
+  margin-left: -3px;
+  vertical-align: 5px;
+}
+
+.peace {
+  vertical-align: -2.5px;
 }

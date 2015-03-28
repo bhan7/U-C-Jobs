@@ -12,7 +12,7 @@ function reload_mail_unread_number(){
         type: "GET",
         success: function(data){
             var mail_unread_number = data;
-            document.getElementsByClassName('unread_number')[0].innerHTML = "[" + mail_unread_number + "]";
+            document.getElementsByClassName('unread_number')[0].innerHTML = mail_unread_number;
         }
     });
 }

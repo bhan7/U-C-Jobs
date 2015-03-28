@@ -10,6 +10,19 @@ body {
   background-color: #6C94B3;
 }
 
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+  background-color: #6C94B3;
+  color: white;
+}
+
+.dropdown-menu {
+  background-color: #29567A;
+}
+
+.dropdown-menu>li>a {
+  color: white; 
+}
+
 a[class="nav-item"] {
   color:white;
 }
@@ -65,12 +78,6 @@ textarea {
   width:50%;
 }
 
-.unread_number {
-  font-weight: bold;
-  vertical-align: 3px;
-  padding-left: 2px;
-}
-
 .back_link {
   color:black;
   float: right;
@@ -85,4 +92,27 @@ textarea {
   height:40px;
   width:120px;
   margin-top:-10px;
+}
+
+.unread_number {
+  background: red;
+  border-radius: 0.6em;
+  -moz-border-radius: 0.6em;
+  -webkit-border-radius: 0.6em;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.2em;
+  text-align: center;
+  width: 1.2em; 
+  margin-left: -3px;
+  vertical-align: 5px;
+}
+
+.peace {
+  vertical-align: -2.5px;
+}
+
+.dropdown-toggle, .nav-item {
+  color:white;
 }
