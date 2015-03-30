@@ -14,46 +14,64 @@
 
 {% block content %}
 <div class="container">
-  <div class="profile">
-    <div class="jumbotron">
-      <div>
+  <div class="jumbotron backc">
+    <div class="photo-name">
+      <div class="img-word">
         {% if job_seeker_profile.photo %}
-        <center><img src="{% url 'get_job_seeker_photo' job_seeker_profile.id %}" alt="{{job_seeker_profile.first_name}} {{job_seeker_profile.last_name}}" height="150" width="150"></center>
+        <img src="{% url 'get_job_seeker_photo' job_seeker_profile.id %}" alt="{{job_seeker_profile.first_name}} {{job_seeker_profile.last_name}}">
         {% else %}
-        <center><img src="/static/img/default-job-seeker.png" alt="default image" height="150" width="150"></center>
+        <img src="/static/img/default-job-seeker.png" alt="default image">
         {% endif %}
-      </div>
-      <center><div class="company-name">{{ job_seeker_profile.user.first_name }} {{ job_seeker_profile.user.last_name }}</div></center>
-      <div class="job-seeker-description"><h4>Description</h4> {{ job_seeker_profile.description }} </div></br>
-      <div class="job-seeker-info"><h4>Basic Information</h4>
-        <ul style="list-style-type:square">
-          <li>Gender: {{ job_seeker_profile.gender }}</li>
-          <li>E-mail: {{ job_seeker_profile.user.email }}</li>
-          <li>Phone: {{ job_seeker_profile.phone }}</li>  
-          <li>ID: {{ job_seeker_profile.id_number }}</li>
-          <li>Birthdate: {{ job_seeker_profile.birthdate }}</li>
-          <li>Birthplace: {{ job_seeker_profile.birthplace }}</li>
-          <li>Current Place: {{ job_seeker_profile.current_place }}</li>
-          <li>Politics Status: {{ job_seeker_profile.politics_status }}</li>
-          <li>Graduation Date: {{ job_seeker_profile.graduation_date }}</li></br>
-        </ul>
-      </div>
-      <div class="job-seeker-education"><h4>Education</h4>
-        {% for education in educations %}
-        <label>{{education.school}}</label></br>
-        {{education.degree}} , {{education.major}}</br>
-        {{education.begin}} - {{education.end}}</br></br>
-        {% endfor %}
-      </div>
-      <div class="job-seeker-work"><h4>Work Experience</h4>
-        {% for work in work_exps %}
-        <label>{{work.position}}</label></br>
-        {{work.company}}</br>
-        {{work.begin}} - {{work.end}}</br>
-        {{work.description}}</br>
-        {% endfor %}
+        <span class="word-name">{{ job_seeker_profile.user.first_name }} {{ job_seeker_profile.user.last_name }}</span>
+        <span class="word-atname">@{{ job_seeker_profile.user.username }}</span>
       </div>
     </div>
+    <div class="information">
+      <div>
+      <h4>Summary</h4> {{ job_seeker_profile.description }}
+      </div></br>
+      <div>
+      <h4>Basic Information</h4>
+      <ul style="list-style-type:square">
+        <li class="left-list">Gender: {{ job_seeker_profile.gender }}</li>
+        <li class="right-list">E-mail: {{ job_seeker_profile.user.email }}</li>
+        <li class="left-list">Phone: {{ job_seeker_profile.phone }}</li>  
+        <li class="right-list">ID: {{ job_seeker_profile.id_number }}</li>
+        <li class="left-list">Birthdate: {{ job_seeker_profile.birthdate }}</li>
+        <li class="right-list">Birthplace: {{ job_seeker_profile.birthplace }}</li>
+        <li class="left-list">Current Place: {{ job_seeker_profile.current_place }}</li>
+        <li class="right-list">Politics Status: {{ job_seeker_profile.politics_status }}</li>
+        <li class="left-list">Graduation Date: {{ job_seeker_profile.graduation_date }}</li>
+        {% if job_seeker_profile.resume.url != null%}
+        <li class="right-list">Resume: <a class="post_info" href="{{job_seeker_profile.resume.url}}" role="button" target="_blank"><span class="glyphicon glyphicon glyphicon-download-alt"></span> Download</a></li>
+        {% endif %}
+      </ul>
+      </div>
+    </div>
+    <div class="dot-color-1">.</div>
+  </div>
+
+  <div class="jumbotron backc edu-left">
+    <h4>Education</h4>
+    {% for education in educations %}
+    <div class="jumbotron job-seeker-education">
+      <label>{{education.school}}</label></br>
+      {{education.degree}}, {{education.major}}</br>
+      {{education.begin}} - {{education.end}}</br></br>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="jumbotron backc work-right">
+    <h4>Work Experience</h4>
+    <div class="jumbotron job-seeker-work">
+      {% for work in work_exps %}
+      <label>{{work.position}}</label></br>
+      {{work.company}}</br>
+      {{work.begin}} - {{work.end}}</br>
+      {{work.description}}</br></br>
+      {% endfor %}
+    </div>   
   </div>
 
 </div>

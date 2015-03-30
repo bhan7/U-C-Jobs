@@ -27,6 +27,11 @@ body {
   color:white;
 }
 
+h4 {
+  padding-top: -5px;
+  padding-bottom: 10px;
+}
+
 div.row { 
   border: 1px solid;
   border-left: 0px;
@@ -45,17 +50,72 @@ th, td {
 	text-align:center;
 }
 
-.company-name {
+.backc{
+  border-radius: 20px;
+  box-shadow: -1px -1px 1px 1px #C7C7C7;
+}
+
+.job-seeker-education, .job-seeker-work {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #C7C7C7;
+}
+
+.photo-name {
+  float:left;
+  width:30%;
+}
+.img-word {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 150px;
+}
+.img-word img {
+  width: 150px;
+  height: 150px;
+}
+.img-word .word-name {
+  display: block;
   font-size:20px;
+}
+.img-word .word-atname {
+  display: block;
+  font-size:13px;
+  margin-top: -5px;
+}
+.information {
+  float: right;
+  width:70%;
+}
+.left-list {
+  float: left;
+  width:50%;
+}
+.right-list {
+  float: right;
+  width:50%;
+}
+.edu-left {
+  float: left;
+  width:48%;
+}
+.work-right {
+  float: right;
+  width:48%;
+}
+.dot-color {
+  color: #F5F5F5;
+}
+.dot-color-1 {
+  color: #F5F5F5;
+  margin-bottom: 80px;
 }
 .company-website, .company-description, .company-info {
   font-size: 15px;
 }
 .post_info {
   color: #4169E1;
-}
-.edit-profile, .new-post{
-  float: right;
 }
 .post_delete {
   color:black;
@@ -72,16 +132,22 @@ th, td {
 }
 .edit-post {
   margin-top: 10px;
-  margin-bottom: 10px;
 }
 .new-education {
-  width:100%;
+  color:black;
+  background: #EAEAEA;
+}
+.btn-default:hover {
+  background: white;
+  color:black;
 }
 .form-sign {
   display: none;
 }
 .edu_edit {
   float: right;
+  background: #EAEAEA;
+  margin-left: 15px;
 }
 .form-control {
   margin-bottom: 5px;
@@ -113,3 +179,7 @@ th, td {
 .peace {
   vertical-align: -2.5px;
 }
+
+.glyphicon-edit, .glyphicon-remove-sign {
+  color: black;
+} 
