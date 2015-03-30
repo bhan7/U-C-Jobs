@@ -52,7 +52,7 @@
   </div>
 
   <div class="jumbotron backc edu-left">
-    <h4>Education</h4>
+    <h4><span class="glyphicon glyphicon glyphicon-book"></span> Education</h4>
     {% for education in educations %}
     <div class="jumbotron job-seeker-education">
       <label>{{education.school}}</label></br>
@@ -63,7 +63,7 @@
   </div>
 
   <div class="jumbotron backc work-right">
-    <h4>Work Experience</h4>
+    <h4><span class="glyphicon glyphicon glyphicon-wrench"></span> Work Experience</h4>
     <div class="jumbotron job-seeker-work">
       {% for work in work_exps %}
       <label>{{work.position}}</label></br>
