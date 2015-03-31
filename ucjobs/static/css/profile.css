@@ -29,7 +29,7 @@ body {
 
 h4 {
   padding-top: -5px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
 div.row { 
@@ -104,6 +104,14 @@ th, td {
   float: right;
   width:48%;
 }
+.hire-left {
+  float: left;
+  width:52%;
+}
+.message-right {
+  float: right;
+  width:47%;
+}
 .dot-color {
   color: #F5F5F5;
 }
@@ -119,6 +127,8 @@ th, td {
 }
 .post_delete {
   color:black;
+  margin-left: 5px;
+  float: right;
 }
 .message-detail {
   border-bottom-style: ridge;
@@ -128,10 +138,17 @@ th, td {
   margin-top: 10px;
 }
 .message-field {
-  width: 50%;
+  margin-left: -15px;
+  width: 120%;
 }
 .edit-post {
   margin-top: 10px;
+  float: right;
+  width: 15%;
+}
+.new-post {
+  float: right;
+  background: #EAEAEA;
 }
 .new-education {
   color:black;
@@ -180,6 +197,6 @@ th, td {
   vertical-align: -2.5px;
 }
 
-.glyphicon-edit, .glyphicon-remove-sign {
+.glyphicon-edit, .glyphicon-remove-sign, .glyphicon-pencil {
   color: black;
 } 

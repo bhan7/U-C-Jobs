@@ -47,13 +47,6 @@
           {{ form.company_website.errors }}
         </div>
       </div>
-      <div class="form-group">
-        <label class="col-sm-2 control-label">Description</label>
-        <div class="col-sm-10">
-          <textarea class="form-control" name="description" rows="10">{{company_profile.description}}</textarea>
-          {{ form.description.errors }}
-        </div>
-      </div>
 
       <div class="form-group">
         <label class="col-sm-2 control-label">Location</label>
@@ -101,8 +94,16 @@
       <div class="form-group">
         <label class="col-sm-2 control-label">Employee Number</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" name="employee_num" value="{{company_profile.employee_num}}"></br>
+          <input type="text" class="form-control" name="employee_num" value="{{company_profile.employee_num}}">
           {{ form.employee_num.errors }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Description</label>
+        <div class="col-sm-10">
+          <textarea class="form-control" name="description" rows="10">{{company_profile.description}}</textarea></br>
+          {{ form.description.errors }}
         </div>
       </div>
 

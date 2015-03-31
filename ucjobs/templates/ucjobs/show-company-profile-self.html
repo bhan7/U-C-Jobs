@@ -19,85 +19,89 @@
 {% block content %}
 <div class="container">
 
-  <div class="profile">
-    <div class="jumbotron">
-      <div>
+  <div class="jumbotron backc">
+    <div class="photo-name">
+      <div class="img-word">
         {% if company_profile.photo %}
         <center><img src="{% url 'get_company_photo' company_profile.id %}" alt="{{company_profile.company_name}}" height="150" width="150"></center>
         {% else %}
         <center><img src="/static/img/default-company.png" alt="default image" height="150" width="150"></center>
         {% endif %}
-      </div>
-
-      <center><div class="company-name">{{ company_profile.company_name }}</div></center>
-
-      <a class="btn btn-default edit-profile" href="{% url 'edit_company_profile' %}" role="button">Edit Profile</a>
-      <div class="company-website">Website: {{ company_profile.company_website }} </div></br>
-      <div class="company-description">Description: {{ company_profile.description }} </div></br>
-      <div class="company-info">Basic Information: 
-        <ul style="list-style-type:square">
-          <li>Location: {{ company_profile.location }}</li>
-          <li>Company Type: {{ company_profile.company_type }}</li>
-          <li>Employee Number: {{ company_profile.employee_num }}</li>
-        </ul>
+        <span class="word-name">{{ company_profile.company_name }}</span>
+        <span class="word-atname">@{{ user.username }}</span>
+        <a class="btn btn-default new-education" href="{% url 'edit_company_profile' %}" role="button">Edit Profile</a>
       </div>
     </div>
+      
+    <div class="information"> 
+      <div>
+        <h4>Basic Information</h4> 
+        <ul style="list-style-type:square">
+          <li class="left-list">Website: {{ company_profile.company_website }}</li>
+          <li class="right-list">Location: {{ company_profile.location }}</li>
+          <li class="left-list">Company Type: {{ company_profile.company_type }}</li>
+          <li class="right-list">Employee Number: {{ company_profile.employee_num }}</li>
+        </ul>
+      </div></br></br>
+      <div>
+        <h4>Description</h4>
+        {{ company_profile.description }} 
+      </div></br>
+      
+    </div>
+    <span class="dot-color">.</span>
   </div>
 
-  <div class="post">
-    <div class="jumbotron">
-      <h2>Hiring Information</h2> 
-      <a class="btn btn-default new-post" href="{% url 'add_company_post' %}" role="button">New Post</a>
+  <div class="jumbotron backc hire-left post">
+    <h2>Hiring Information</h2> 
+    <a class="btn btn-default new-post" href="{% url 'add_company_post' %}" role="button">New Post</a>
 
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th width="15%">Location</th>
-            <th width="15%">Time</th>
-            <th width="55%">Post Title</th>
-            <th width="15%"></th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for company_post in company_posts %}
-          <tr>
-            <td>{{company_post.location}}</td>
-            <td>{{company_post.post_time|date:"M-d-Y"}}</td>
-            <td><a class="post_info" href="{% url 'show_company_post_self' company_post.id %}">{{company_post.post_subject}}</a></td>
-            <td>
-              <a class="btn btn-default post_delete" href="{% url 'edit_company_post' company_post.id %}" role="button">Edit</a>
-              <a class="btn btn-default post_delete" href="{% url 'delete_company_post' company_post.id %}" role="button">Delete</a>
-            </td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th width="15%">Location</th>
+          <th width="23%">Time</th>
+          <th width="50%">Post Title</th>
+          <th width="12%"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for company_post in company_posts %}
+        <tr>
+          <td>{{company_post.location}}</td>
+          <td>{{company_post.post_time|date:"M-d-Y"}}</td>
+          <td><a class="post_info" href="{% url 'show_company_post_self' company_post.id %}">{{company_post.post_subject}}</a></td>
+          <td>
+            <a class="post_delete" href="{% url 'delete_company_post' company_post.id %}" role="button"><span class="glyphicon glyphicon-remove-sign"></span></a>
+            <a class="post_delete" href="{% url 'edit_company_post' company_post.id %}" role="button"><span class="glyphicon glyphicon-edit"></span></a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
 
   <!-- Ajax to update -->
-  <div class="message">
-    <div class="jumbotron">
-      <h2>Message Board</h2>
-      <div class="messages">
-        {% for message in messages %}
-        <div class="message-detail">
-          {% if not message.user.last_name %}
-          <a class="post_info" href="{% url 'show_company_profile_self' %}">{{message.user.first_name}}</a>: {{message.content}} <a class="message_reply" onclick="replyMessage(this)">Reply</a>
-          {% else %}
-          <a class="post_info" href="{% url 'show_job_seeker_profile_company' message.user.id %}">{{message.user.first_name}} {{message.user.last_name}}</a>: {{message.content}} <a class="message_reply" onclick="replyMessage(this)">Reply</a>
-          {% endif %}
-        </div>
-        {% endfor %} 
-      </div> 
-      <form class="form-signin message-form">
-        <div class="message-field">
-          <input id="message_input" type="text" class="form-control" name="content">
-        </div>
-        {% csrf_token %}
-      </form>
-      <button onclick="add_message_self()" company-profile-id="{{company_profile.id}}" class="btn btn-default edit-post post-message">Post</button>
-    </div>
+  <div class="jumbotron backc message-right message">
+    <h2>Message Board</h2>
+    <div class="messages">
+      {% for message in messages %}
+      <div class="message-detail">
+        {% if not message.user.last_name %}
+        <a class="post_info" href="{% url 'show_company_profile_self' %}">{{message.user.first_name}}</a>: {{message.content}} <a class="message_reply" onclick="replyMessage(this)"><span class="glyphicon glyphicon-pencil" style="cursor:pointer"></span></a>
+        {% else %}
+        <a class="post_info" href="{% url 'show_job_seeker_profile_company' message.user.id %}">{{message.user.first_name}} {{message.user.last_name}}</a>: {{message.content}} <a class="message_reply" onclick="replyMessage(this)"><span class="glyphicon glyphicon-pencil" style="cursor:pointer"></span></a>
+        {% endif %}
+      </div>
+      {% endfor %} 
+    </div> 
+    <form class="form-signin message-form col-sm-9">
+      <div class="message-field">
+        <input id="message_input" type="text" class="form-control" name="content">
+      </div>
+      {% csrf_token %}
+    </form>
+    <a onclick="add_message_self()" company-profile-id="{{company_profile.id}}" class="btn btn-default post-message edit-post new-education col-sm-3"><span class="glyphicon glyphicon-comment"></span></a>
   </div>
 
 </div>
