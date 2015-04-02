@@ -11,15 +11,15 @@
     </ul>
   </div>
 
-  <div class="col-sm-9">
-    <h3 class="page-header">Mail Box</h3>
+  <div class="col-sm-9 mail-border">
+    <h3 class="page-header"><span class="glyphicon glyphicon-pencil"></span> Mail Box</h3>
     <div>
       <form class="form-signin" action="{% url 'company_mail_compose' %}" method="post">
 
         <div class="form-group">
           <label class="col-sm-2 control-label">To</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="receiver">
+            <input type="text" class="form-control" placeholder="Use username as mail address. Find it under profile photo." name="receiver">
             {{ form.receiver.errors }}
           </div>
         </div>

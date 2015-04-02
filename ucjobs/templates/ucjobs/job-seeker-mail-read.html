@@ -11,13 +11,15 @@
     </ul>
   </div>
 
-  <div class="col-sm-9">
+  <div class="col-sm-9 mail-border">
     <h3 class="page-header">Mail Box</h3>
     <div>
 
+      <span class="mail-subject">{{mail.mail_subject}}</span></br>
       From: {{mail.sender}}</br>
-      Subject: {{mail.mail_subject}}</br></br>
-      <textarea disabled>{{mail.mail_content}}</textarea>
+      To: {{mail.receiver}}</br>
+      Date: {{mail.mail_time}}</br></br>
+      <textarea class="mail-content" disabled>{{mail.mail_content}}</textarea>
 
     </div>
   </div>

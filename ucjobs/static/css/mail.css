@@ -31,20 +31,24 @@ a[class="nav-item"] {
   margin-bottom: 5px;
 }
 
+.mail-border {
+  border-style: solid;
+  border-radius: 15px;
+  box-shadow: 1.5px 1.5px 1.5px 1.5px #C7C7C7;
+  border-color:#29567A;
+
+}
+
+.page-header {
+  border-color: #29567A;
+}
+
 th, td {
 	text-align:left;
 }
 
 .nav-sidebar {
   margin-top: 40px;
-}
-
-li.active-job-seeker {
-  background-color: #1E90FF;
-}
-
-li.active-company {
-  background-color: #483D8B;
 }
 
 a[class="active-font"] {
@@ -57,7 +61,7 @@ a[class="normal-font"] {
 
 textarea {
   width: 100%;
-  height: 15em;
+  height: 17em;
 }
 
 .form-control {
@@ -68,6 +72,11 @@ textarea {
   height:40px;
   width:120px;
   margin-top:-10px;
+}
+
+.nav-sidebar>li>a {
+  width:70%;
+  border-radius: 13px;
 }
 
 .nav li.active a{
@@ -102,4 +111,25 @@ textarea {
 
 .dropdown-toggle, .nav-item {
   color:white;
+}
+
+.backc{
+  border-radius: 20px;
+  box-shadow: -1px -1px 1px 1px #C7C7C7;
+}
+
+.edit-post {
+  color:black;
+  background: #EAEAEA;
+  margin-bottom: 10px;
+}
+
+.mail-subject {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.mail-content {
+  margin-bottom: 5px;
+  border: none; 
 }
