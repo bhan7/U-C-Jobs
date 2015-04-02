@@ -18,21 +18,21 @@
 
 {% block content %}
 <div class="container">
-  <div class="jumbotron">
+  <div class="jumbotron backc search-left">
 
     <form class="form-signin">
 
       <h2>Search</h2></br>
       <div class="form-group">
-        <label class="col-sm-2 control-label">Location</label>
-        <div class="col-sm-10">
+        <label class="col-sm-4 control-label">Location</label>
+        <div class="col-sm-8">
           <input type="text" class="form-control" name="location">
           {{ form.location.errors }}
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-2 control-label">Company Type</label>
-        <div class="col-sm-10">
+        <label class="col-sm-4 control-label">Company Type</label>
+        <div class="col-sm-8">
           <select class="form-control" name="company_type">
             <option value=""></option>
             <option value="Arts and Entertainment">Arts and Entertainment</option>
@@ -65,8 +65,8 @@
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-2 control-label">Company Name</label>
-        <div class="col-sm-10">
+        <label class="col-sm-4 control-label">Company Name</label>
+        <div class="col-sm-8">
           <input type="text" class="form-control" name="company_name">
           {{ form.company_name.errors }}
         </div>
@@ -78,6 +78,6 @@
     </form>   
   </div>
   <!-- Ajax to combine search-company-result -->
-  <div class="jumbotron result"><h2>Result</h2></br></div>
+  <div class="jumbotron backc search-right result"><h2>Result</h2></br></div>
 </div>
 {% endblock %}

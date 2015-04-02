@@ -18,37 +18,30 @@
 
 {% block content %} 
 <div class="container">
-  <div class="jumbotron">
+  <div class="jumbotron backc search-left">
 
     <form class="form-signin">
 
       <h2>Search</h2></br>
       <div class="form-group">
-        <label class="col-sm-2 control-label">Major</label>
-        <div class="col-sm-10">
+        <label class="col-sm-4 control-label">Major</label>
+        <div class="col-sm-8">
           <input type="text" class="form-control" name="major">
           {{ form.major.errors }}
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-2 control-label">School</label>
-        <div class="col-sm-10">
+        <label class="col-sm-4 control-label">School</label>
+        <div class="col-sm-8">
           <input type="text" class="form-control" name="school">
           {{ form.school.errors }}
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-2 control-label">Current Location</label>
-        <div class="col-sm-10">
+        <label class="col-sm-4 control-label">Current Location</label>
+        <div class="col-sm-8">
           <input type="text" class="form-control" name="current_place">
           {{ form.current_place.errors }}
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="col-sm-2 control-label">Graduation Date</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" name="graduation_date" placeholder="yyyy-mm or yyyy">
-          {{ form.graduation_date.errors }}
         </div>
       </div>
 
@@ -58,7 +51,7 @@
     </form>   
   </div>
   <!-- Ajax to combine search-job-seeker-result -->
-  <div class="jumbotron result"><h2>Result</h2></br></div>
+  <div class="jumbotron backc search-right result"><h2>Result</h2></br></div>
 </div>
 
 {% endblock %}

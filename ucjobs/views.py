@@ -707,17 +707,16 @@ def search_job_seeker_result(request):
     major = request.POST['major']
     school = request.POST['school']
     current_place = request.POST['current_place']
-    graduation_date = request.POST['graduation_date']
 
     if school == '' and major == '':
-        if current_place == '' and graduation_date == '':
+        if current_place == '':
             context['result'] = []
         else:
-            context['result'] = JobSeekerProfile.objects.filter(current_place__contains=current_place).filter(graduation_date__contains=graduation_date)
+            context['result'] = JobSeekerProfile.objects.filter(current_place__contains=current_place)
     else:
         user_ids = Education.objects.filter(school__contains=school).filter(major__contains=major).values_list('user_id', flat=True)
         users = User.objects.filter(id__in=user_ids)
-        context['result'] = JobSeekerProfile.objects.filter(user__in=users).filter(current_place__contains=current_place).filter(graduation_date__contains=graduation_date)
+        context['result'] = JobSeekerProfile.objects.filter(user__in=users).filter(current_place__contains=current_place)
 
     print context['result']
     return render(request, 'ucjobs/search-job-seeker-result.html', context)
