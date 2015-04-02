@@ -37,7 +37,14 @@ a[class="nav-item"] {
 
 .view-post {
   margin-top: 10px;
+  margin-left: 3px;
   float: right;
+  background: #EAEAEA;
+}
+
+.btn-default:hover {
+  background: white;
+  color:black;
 }
 
 .form-control {
@@ -115,4 +122,24 @@ textarea {
 
 .dropdown-toggle, .nav-item {
   color:white;
+}
+
+.backc{
+  border-radius: 20px;
+  box-shadow: -1px -1px 1px 1px #C7C7C7;
+}
+
+.post-subject {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.post-info {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.post-content {
+  border-radius: 10px;
+  margin-top: 5px;
 }

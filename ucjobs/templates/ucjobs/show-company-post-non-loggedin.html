@@ -36,9 +36,10 @@
   </nav>
 
   <div class="container">
-    <div class="jumbotron">
+    <div class="jumbotron backc">
+    <center><span class="post-subject">{{company_post.post_subject}}</span></center>
 
-      <div class="row">
+      <div class="row post-info">
         <div class="col-sm-4">
           Post Time: {{company_post.post_time}}
         </div>
@@ -50,11 +51,11 @@
         </div>
       </div>
 
-      <div class="post-content">
-        <center><h3>Content<h3></center>
-        <textarea disabled>{{company_post.post_content}}</textarea>
+      <div>
+        <textarea class="post-content" disabled>{{company_post.post_content}}</textarea>
       </div>
-      <a class="btn btn-default view-post" href="{% url 'home_non_loggedin' %}" role="button">Back</a>  
+      <a class="btn btn-default view-post" href="{% url 'home_non_loggedin' %}" role="button">Back</a>
+      <a class="btn btn-default view-post" href="{% url 'show_company_profile_non_loggedin' company_post.user.id%}" role="button">Go to <span>{{company_post.user.first_name}}</span>'s Home Page</a>  
     </div>
   </div>
 
