@@ -114,7 +114,7 @@
             {{ education_form.end.errors }}
           </div>
         </div>
-        <center><button type="submit" class="btn btn-default new-education edit-post">Save</button> <a class="btn btn-default new-education edit-post" onclick="Education(1)" role="button">Cancel</a></center>
+        <center><button type="submit" class="btn btn-default new-education">Save</button> <a class="btn btn-default new-education" onclick="Education(1)" role="button">Cancel</a></center>
         {% csrf_token %}
       </div>
     </form>
@@ -171,7 +171,7 @@
             {{ work_exp_form.description.errors }}
           </div>
         </div>
-        <center><button type="submit" class="btn btn-default new-education edit-post">Save</button> <a id="work-add" class="btn btn-default edit-post new-education" onclick="Work(1)" role="button">Cancel</a> </center>
+        <center><button type="submit" class="btn btn-default new-education">Save</button> <a id="work-add" class="btn btn-default new-education" onclick="Work(1)" role="button">Cancel</a> </center>
         {% csrf_token %}
       </div>
     </form>
