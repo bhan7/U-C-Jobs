@@ -153,4 +153,8 @@ textarea {
   width:48%;
   float:right;
 }
-
+.reset-size {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
