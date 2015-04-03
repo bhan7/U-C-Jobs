@@ -12,7 +12,8 @@ body {
 /* reference for the semi-transparent container block:
  http://www.cnf2e.com/css-div-html/css-background-color-transparent.html */
 .container {
-  width:30%;
+  border-radius:15px;
+  width:35%;
   background:rgba(223,216,216,0.8);
   background: transparent\9;
   zoom:1\8; /* required for the filters */
