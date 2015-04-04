@@ -9,7 +9,7 @@ body {
 .logo {
   height:40px;
   width:120px;
-  margin-top:-10px;
+  margin-top:-8px;
 }
 
 .navbar-nav li a:hover {
@@ -84,20 +84,18 @@ th, td {
 }
 
 .unread_number {
-  background: red;
-  border-radius: 0.6em;
-  -moz-border-radius: 0.6em;
-  -webkit-border-radius: 0.6em;
   color: #ffffff;
   display: inline-block;
   font-weight: bold;
-  line-height: 1.2em;
-  text-align: center;
-  width: 1.2em; 
-  margin-left: -3px;
-  vertical-align: 5px;
+  vertical-align: -2px;
+  margin-left: -13.5px;
+}
+
+.no-in-circle {
+  vertical-align: 9px;
+  margin-left: -4px;
 }
 
 .peace {
-  vertical-align: -2.5px;
+  vertical-align: -8px;
 }
