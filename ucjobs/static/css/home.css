@@ -99,3 +99,10 @@ th, td {
 .peace {
   vertical-align: -8px;
 }
+
+input, textarea { 
+  color: #000; 
+}
+.placeholder { 
+  color: #aaa; 
+}

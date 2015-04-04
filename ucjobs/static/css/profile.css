@@ -200,3 +200,9 @@ th, td {
 .glyphicon-edit, .glyphicon-remove-sign, .glyphicon-pencil {
   color: black;
 } 
+input, textarea { 
+  color: #000; 
+}
+.placeholder { 
+  color: #aaa; 
+}

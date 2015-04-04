@@ -88,3 +88,10 @@ a {
   width:180px;
   margin-top: 20px;
 }
+
+input, textarea { 
+  color: #000; 
+}
+.placeholder { 
+  color: #aaa; 
+}

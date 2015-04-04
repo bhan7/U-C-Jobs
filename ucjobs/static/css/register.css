@@ -78,3 +78,9 @@ a{
 .btn:hover {
   background-color: #6C94B3;
 }
+input, textarea { 
+  color: #000; 
+}
+.placeholder { 
+  color: #aaa; 
+}

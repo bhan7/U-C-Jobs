@@ -142,3 +142,10 @@ textarea {
   margin-bottom: 5px;
   border: none; 
 }
+
+input, textarea { 
+  color: #000; 
+}
+.placeholder { 
+  color: #aaa; 
+}
