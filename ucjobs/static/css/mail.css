@@ -34,6 +34,8 @@ a[class="nav-item"] {
 .mail-border {
   border-style: solid;
   border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
   box-shadow: 1.5px 1.5px 1.5px 1.5px #C7C7C7;
   border-color:#29567A;
 
@@ -77,6 +79,8 @@ textarea {
 .nav-sidebar>li>a {
   width:70%;
   border-radius: 13px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
 }
 
 .nav li.active a{
@@ -113,6 +117,8 @@ textarea {
 
 .backc{
   border-radius: 20px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
   box-shadow: -1px -1px 1px 1px #C7C7C7;
 }
 

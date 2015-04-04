@@ -52,6 +52,8 @@ th, td {
 
 .backc{
   border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
   box-shadow: -1px -1px 1px 1px #C7C7C7;
 }
 

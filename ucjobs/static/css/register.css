@@ -13,6 +13,8 @@ body {
  http://www.cnf2e.com/css-div-html/css-background-color-transparent.html */
 .container {
   border-radius:15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
   width:35%;
   background:rgba(223,216,216,0.8);
   background: transparent\9;
