@@ -15,10 +15,10 @@ body {
   border-radius:15px;
   width:35%;
   background:rgba(223,216,216,0.8);
-  background: transparent\9;
+  background:transparent\9;
   zoom:1\8; /* required for the filters */
-  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)"; /* IE8 */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000); /* IE5.5-7 */
+  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#99E5DFDF, endColorstr=#99E5DFDF)"; /* IE8 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99E5DFDF, endColorstr=#99E5DFDF); /* IE5.5-7 */
 }
 .form-signin {
   max-width: 330px;
