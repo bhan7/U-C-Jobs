@@ -37,6 +37,9 @@ a[class="nav-item"] {
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   box-shadow: 1.5px 1.5px 1.5px 1.5px #C7C7C7;
+  -moz-box-shadow: 1.5px 1.5px 1.5px 1.5px #C7C7C7;
+  -webkit-box-shadow: 1.5px 1.5px 1.5px 1.5px #C7C7C7;
+  filter: progid:DXImageTransform.Microsoft.DropShadow(OffX=1.5, OffY=1.5, Color=#C7C7C7);
   border-color:#29567A;
 
 }
@@ -95,20 +98,22 @@ textarea {
 }
 
 .unread_number {
+  background: #FF0000 !important;
+  border-radius: 0.6em;
+  -moz-border-radius: 0.6em;
+  -webkit-border-radius: 0.6em;
   color: #ffffff;
   display: inline-block;
   font-weight: bold;
-  vertical-align: -2px;
-  margin-left: -13.5px;
-}
-
-.no-in-circle {
-  vertical-align: 9px;
-  margin-left: -4px;
+  line-height: 1.2em;
+  text-align: center;
+  width: 1.2em; 
+  margin-left: -3px;
+  vertical-align: 5px;
 }
 
 .peace {
-  vertical-align: -8px;
+  vertical-align: -2.5px;
 }
 
 .dropdown-toggle, .nav-item {
@@ -120,6 +125,9 @@ textarea {
   -webkit-border-radius: 13px;
   -moz-border-radius: 13px;
   box-shadow: -1px -1px 1px 1px #C7C7C7;
+  -moz-box-shadow: -1px -1px 1px 1px #C7C7C7;
+  -webkit-box-shadow: -1px -1px 1px 1px #C7C7C7;
+  filter: progid:DXImageTransform.Microsoft.DropShadow(OffX=1, OffY=1, Color=#C7C7C7);
 }
 
 .edit-post {
