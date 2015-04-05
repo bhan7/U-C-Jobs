@@ -56,7 +56,7 @@
       </div>
 
       <div>
-        <textarea class="post-content" disabled>{{company_post.post_content}}</textarea>
+        <textarea class="post-content" readonly>{{company_post.post_content}}</textarea>
       </div>
       <a class="btn btn-default view-post" href="{% url 'home_non_loggedin' %}" role="button">Back</a>
       <a class="btn btn-default view-post" href="{% url 'show_company_profile_non_loggedin' company_post.user.id%}" role="button">Go to <span>{{company_post.user.first_name}}</span>'s Home Page</a>  

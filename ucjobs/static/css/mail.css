@@ -64,9 +64,11 @@ a[class="normal-font"] {
   color:black;
 }
 
-textarea {
+textarea[readonly] {
+  background-color: #FFFFFF;
   width: 100%;
   height: 17em;
+  color:#000000;
 }
 
 .form-control {
@@ -127,7 +129,6 @@ textarea {
   box-shadow: -1px -1px 1px 1px #C7C7C7;
   -moz-box-shadow: -1px -1px 1px 1px #C7C7C7;
   -webkit-box-shadow: -1px -1px 1px 1px #C7C7C7;
-  filter: progid:DXImageTransform.Microsoft.DropShadow(OffX=1, OffY=1, Color=#C7C7C7);
 }
 
 .edit-post {
