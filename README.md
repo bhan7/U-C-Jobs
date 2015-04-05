@@ -15,5 +15,5 @@ References:
 2. Django build-in password reset via email: 
 a. http://blog.xjtian.com/post/54552214875/built-in-password-reset-views-in-django
 b. http://blog.montylounge.com/2009/07/12/django-forgot-password/
-3. JS Compressor tool: http://refresh-sf.com/yui/ 
+3. JS Compressor tool: http://refresh-sf.com/
 
