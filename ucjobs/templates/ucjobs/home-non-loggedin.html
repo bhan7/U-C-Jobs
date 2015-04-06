@@ -16,8 +16,13 @@
 </nav>
 {% endblock %}
 
-{% block welcome %} 
+{% block welcome %}
+<!--[if !IE]> -->
 <img class="welcome" src="/static/img/welcome.png">
+<!-- <![endif]-->
+<!--[if IE]>
+<img class="welcome" src="/static/img/welcome-ie.png">
+<![endif]-->
 <div id="floater"></div>
 {% endblock %}
 
