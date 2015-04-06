@@ -39,7 +39,6 @@ a[class="nav-item"] {
   box-shadow: 1.5px 1.5px 1.5px 1.5px #C7C7C7;
   -moz-box-shadow: 1.5px 1.5px 1.5px 1.5px #C7C7C7;
   -webkit-box-shadow: 1.5px 1.5px 1.5px 1.5px #C7C7C7;
-  filter: progid:DXImageTransform.Microsoft.DropShadow(OffX=1.5, OffY=1.5, Color=#C7C7C7);
   border-color:#29567A;
 
 }
