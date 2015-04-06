@@ -111,3 +111,17 @@ input, textarea {
 .placeholder { 
   color: #aaa; 
 }
+#floater {
+  width: 314px;
+  height: 314px;
+  background-image: url(/static/img/note.png);
+  background-repeat: no-repeat;
+  background-position: right top;
+  position: fixed;
+  left: 100%;
+  top:100%;
+  margin-left: -314px;
+  margin-top: -314px;
+  display: block;
+  z-index: 99999;
+}
